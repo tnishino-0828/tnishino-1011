@@ -1,0 +1,581 @@
+@charset "UTF-8";
+html {
+  font-size: 100%;
+}
+
+body {
+  color: #333;
+  font-size: 1rem;
+  font-family: "Noto Sans", "Noto Sans JP", sans-serif;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+/*
+コンテンツ幅を設定するための共通クラス
+*/
+.wrapper {
+  max-width: 1200px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.readmore {
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/*
+疑似要素で下線を設定するために、「position: relative;」を設定
+*/
+.readmore a {
+  padding-bottom: 1px;
+  color: #333;
+  position: relative;
+}
+
+/*
+「position: absolute;」を設定し、left、bottomで下線の位置を調整
+widthとheightで線の長さと高さを設定
+疑似要素で線を表示させるためには、「content: '';」を設定すること
+「transition: all 200ms ease;」でホバー時の速度などを設定
+*/
+.readmore a::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background: #333;
+  transition: all 200ms ease;
+}
+
+/*
+ホバー時の下線の設定
+「opacity: 0;」下線を非表示
+「transform: translateY(3px);」下に3px移動
+→下に3px移動しながら下線を非表示にする
+*/
+.readmore a:hover::after {
+  opacity: 0;
+  transform: translateY(3px);
+}
+
+body {
+  font-family: "Noto Sans", "Noto Sans JP", sans-serif;
+}
+
+header.header {
+  position: fixed;
+  width: 100%;
+  background-color: #FFFFFF;
+  left: 0;
+  top: 0;
+}
+header.header div.headerin {
+  margin-top: 14px;
+}
+@media (min-width: 768px) {
+  header.header div.headerin {
+    width: 1200px;
+    margin: 0 auto 0;
+  }
+}
+header.header div.headerin h1 {
+  margin-bottom: initial;
+  padding: 0 16px;
+}
+@media (min-width: 768px) {
+  header.header div.headerin h1 {
+    padding: 5px 16px 17px;
+  }
+}
+header.header div.headerin h1 a {
+  display: block;
+}
+@media (min-width: 768px) {
+  header.header div.headerin h1 a {
+    padding: initial;
+  }
+}
+header.header div.headermenu {
+  background-color: #333333;
+  margin-top: 20px;
+}
+@media (min-width: 768px) {
+  header.header div.headermenu {
+    margin-top: 0px;
+  }
+}
+header.header div.headermenu ul.mess {
+  display: flex;
+  justify-content: flex-start;
+  overflow: scroll;
+  padding-left: initial;
+}
+@media (min-width: 768px) {
+  header.header div.headermenu ul.mess {
+    justify-content: flex-start;
+    gap: 60px;
+    overflow: hidden;
+    width: 1170px;
+    margin: 0 auto;
+    padding-left: initial;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  header.header div.headermenu ul.mess {
+    width: initial;
+    padding: 0 16px;
+  }
+}
+header.header div.headermenu ul.mess li.item a {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+  display: block;
+  color: #FFFFFF;
+  padding: 10px 30px 10px 30px;
+}
+@media (min-width: 768px) {
+  header.header div.headermenu ul.mess li.item a {
+    padding: 11px 0;
+  }
+}
+
+section.pickup {
+  margin-top: 160px;
+  padding: 0 16px;
+}
+@media (min-width: 768px) {
+  section.pickup {
+    width: 1170px;
+    margin: 150px auto 0;
+    padding: initial;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.pickup {
+    width: initial;
+    padding: 0 16px;
+  }
+}
+@media (min-width: 768px) {
+  section.pickup div.lists {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+}
+@media (min-width: 768px) {
+  section.pickup div.lists div.item div.image img {
+    height: 210px;
+    object-fit: cover;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.pickup div.lists div.item div.image img {
+    height: auto;
+  }
+}
+section.pickup div.lists div.item div.text {
+  margin-top: 7px;
+}
+@media (min-width: 768px) {
+  section.pickup div.lists div.item div.text {
+    margin-top: 16px;
+  }
+}
+section.pickup div.lists div.item div.text h2 {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+@media (min-width: 768px) {
+  section.pickup div.lists div.item div.text h2 {
+    line-height: 23px;
+  }
+}
+section.pickup div.lists div.item div.text div.more {
+  text-align: center;
+  margin-top: 17px;
+}
+section.pickup div.lists div.item div.text div.more a {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  display: block;
+}
+section.pickup div.lists div.item + .item {
+  margin-top: 30px;
+}
+@media (min-width: 768px) {
+  section.pickup div.lists div.item + .item {
+    margin-top: initial;
+  }
+}
+
+section.blog {
+  margin-top: 96px;
+  padding: 0 16px;
+}
+@media (min-width: 768px) {
+  section.blog {
+    display: flex;
+    justify-content: flex-start;
+    gap: 43px;
+    width: 1170px;
+    margin: 75px auto 0;
+    padding: initial;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.blog {
+    width: initial;
+    padding: 0 16px;
+  }
+}
+@media (min-width: 768px) {
+  section.blog div.blog_left {
+    width: 65%;
+  }
+}
+section.blog div.blog_left div.lists div.item h2 {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 28px;
+}
+section.blog div.blog_left div.lists div.item div.detail {
+  margin-top: 21px;
+}
+@media (min-width: 768px) {
+  section.blog div.blog_left div.lists div.item div.detail {
+    margin-top: 16px;
+  }
+}
+section.blog div.blog_left div.lists div.item div.detail span.date {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+}
+section.blog div.blog_left div.lists div.item div.detail span.category {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+  margin-left: 20px;
+}
+section.blog div.blog_left div.lists div.item div.image {
+  margin-top: 9px;
+}
+section.blog div.blog_left div.lists div.item div.image a img {
+  height: 210px;
+  object-fit: cover;
+}
+@media (min-width: 768px) {
+  section.blog div.blog_left div.lists div.item div.image a img {
+    height: 427px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.blog div.blog_left div.lists div.item div.image a img {
+    height: auto;
+  }
+}
+section.blog div.blog_left div.lists div.item div.text {
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: 7px;
+  padding: 10px 40px 30px 40px;
+}
+@media (min-width: 768px) {
+  section.blog div.blog_left div.lists div.item div.text {
+    line-height: 23px;
+  }
+}
+section.blog div.blog_left div.lists div.item div.more {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+  text-decoration: underline;
+  text-align: center;
+  margin-top: 64px;
+}
+@media (min-width: 768px) {
+  section.blog div.blog_left div.lists div.item div.more {
+    margin-top: 10px;
+  }
+}
+section.blog div.blog_left div.lists div.item div.more:hover {
+  cursor: pointer;
+}
+section.blog div.blog_left div.lists div.item + .item {
+  margin-top: 86px;
+}
+@media (min-width: 768px) {
+  section.blog div.blog_left div.lists div.item + .item {
+    margin-top: 72px;
+  }
+}
+section.blog div.blog_right {
+  margin-top: 80px;
+}
+@media (min-width: 768px) {
+  section.blog div.blog_right {
+    width: 30%;
+    margin-top: 7px;
+  }
+}
+section.blog div.blog_right div.author div.face {
+  text-align: center;
+}
+section.blog div.blog_right div.author div.face img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+}
+section.blog div.blog_right div.author div.name {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 21px;
+  text-align: center;
+  margin-top: 30px;
+}
+@media (min-width: 768px) {
+  section.blog div.blog_right div.author div.name {
+    margin-top: 34px;
+  }
+}
+section.blog div.blog_right div.author div.text {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+  margin-top: 28px;
+}
+@media (min-width: 768px) {
+  section.blog div.blog_right div.author div.text {
+    line-height: 22px;
+    margin-top: 31px;
+  }
+}
+section.blog div.blog_right div.ranking {
+  margin-top: 68px;
+}
+@media (min-width: 768px) {
+  section.blog div.blog_right div.ranking {
+    margin-top: 60px;
+  }
+}
+section.blog div.blog_right div.ranking div.title {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 21px;
+  text-align: center;
+}
+section.blog div.blog_right div.ranking div.lists {
+  margin-top: 30px;
+}
+@media (min-width: 768px) {
+  section.blog div.blog_right div.ranking div.lists div.item div.image a img {
+    height: auto;
+  }
+}
+section.blog div.blog_right div.ranking div.lists div.item div.text {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+  margin-top: 4px;
+}
+@media (min-width: 768px) {
+  section.blog div.blog_right div.ranking div.lists div.item div.text {
+    margin-top: 8px;
+  }
+}
+section.blog div.blog_right div.ranking div.lists div.item + .item {
+  margin-top: 33px;
+}
+section.blog div.blog_right div.archive {
+  margin-top: 63px;
+}
+section.blog div.blog_right div.archive div.title {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 21px;
+  text-align: center;
+}
+section.blog div.blog_right div.archive div.lists {
+  margin-top: 30px;
+}
+section.blog div.blog_right div.archive div.lists div.item a {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+  display: block;
+  padding: 20px;
+}
+section.blog div.blog_right div.archive div.lists div.item:first-child {
+  border-top: 1px solid #777777;
+}
+section.blog div.blog_right div.archive div.lists div.item + .item {
+  border-top: 1px solid #777777;
+}
+section.blog div.blog_right div.archive div.lists div.item:last-child {
+  border-bottom: 1px solid #777777;
+}
+
+footer.footer {
+  background-color: #F7F7F7;
+  margin-top: 120px;
+  padding-bottom: 10px;
+}
+footer.footer div.footerin {
+  padding: 50px 16px 90px;
+}
+@media (min-width: 768px) {
+  footer.footer div.footerin {
+    display: flex;
+    gap: 53px;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 50px 16px 60px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  footer.footer div.footerin {
+    width: initial;
+  }
+}
+@media (min-width: 768px) {
+  footer.footer div.footerin div.about {
+    flex: 1;
+  }
+}
+footer.footer div.footerin div.about h2 {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 21px;
+}
+footer.footer div.footerin div.about div.text {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+  margin-top: 28px;
+}
+footer.footer div.footerin div.about div.link {
+  display: inline-flex;
+  flex-direction: column;
+  margin-top: 38px;
+}
+footer.footer div.footerin div.about div.link a.item {
+  letter-spacing: 0;
+  line-height: 21px;
+  position: relative;
+  padding-left: 12px;
+}
+@media (min-width: 768px) {
+  footer.footer div.footerin div.about div.link a.item {
+    line-height: 26px;
+  }
+}
+footer.footer div.footerin div.about div.link a.item::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 8px;
+  border-color: transparent transparent transparent #333;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -6px;
+}
+footer.footer div.footerin div.menu {
+  margin-top: 38px;
+}
+@media (min-width: 768px) {
+  footer.footer div.footerin div.menu {
+    flex: 1;
+    margin-top: initial;
+  }
+}
+footer.footer div.footerin div.menu h2 {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 21px;
+}
+footer.footer div.footerin div.menu ul.lists {
+  margin-top: 30px;
+  padding-left: 0;
+}
+footer.footer div.footerin div.menu ul.lists li.item {
+  border-top: 1px solid #707070;
+}
+footer.footer div.footerin div.menu ul.lists li.item a {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+  padding: 15px 0 15px 15px;
+  display: block;
+}
+@media (min-width: 768px) {
+  footer.footer div.footerin div.menu ul.lists li.item a {
+    line-height: 21px;
+  }
+}
+footer.footer div.footerin div.menu ul.lists li.item:first-child {
+  margin-top: 15px;
+}
+footer.footer div.footerin div.menu ul.lists li.item:last-child {
+  border-bottom: 1px solid #707070;
+}
+footer.footer div.footerin div.menu ul.lists li.item + .item {
+  border-top: 1px solid #707070;
+}
+footer.footer div.footerin div.twitter {
+  margin-top: 30px;
+}
+@media (min-width: 768px) {
+  footer.footer div.footerin div.twitter {
+    flex: 1;
+    margin-top: initial;
+  }
+}
+footer.footer div.footerin div.twitter h2 {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 21px;
+}
+footer.footer div.footerin div.twitter div.timeline {
+  margin-top: 28px;
+}
+footer.footer div.footerin div.twitter div.timeline iframe {
+  width: 100% !important;
+}
+footer.footer div.copyright {
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 14px;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
