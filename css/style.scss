@@ -350,6 +350,7 @@ section.blog {
           div.image {
             a {
               img {
+                object-fit: cover;
                 @media (min-width: 768px) {
                   height: auto;
                 }
